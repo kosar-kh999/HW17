@@ -57,11 +57,6 @@ public class StudentCourseServiceImpl implements StudentCourseRatingService {
     }
 
     @Override
-    public void save(Student student, Course course) {
-
-    }
-
-    @Override
     public int count() {
         return 0;
     }
