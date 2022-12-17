@@ -1,6 +1,5 @@
 package ir.maktab.repository;
 
-import ir.maktab.data.Student;
 import ir.maktab.data.StudentCourseRating;
 
 import javax.persistence.EntityManager;

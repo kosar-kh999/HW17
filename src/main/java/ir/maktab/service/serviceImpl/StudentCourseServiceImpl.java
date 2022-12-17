@@ -23,7 +23,8 @@ public class StudentCourseServiceImpl implements StudentCourseRatingService {
 
     @Override
     public StudentCourseRating load(int lineNumber) {
-        try (RandomAccessFile file = new RandomAccessFile("file.txt", "rw")) {
+        try (RandomAccessFile file = new RandomAccessFile("F:\\java\\HW17\\src\\main\\java\\ir\\maktab\\file.txt",
+                "rw")) {
             String readLine = null;
             for (int i = 1; i <= lineNumber; i++) {
                 readLine = file.readLine();
@@ -32,8 +33,10 @@ public class StudentCourseServiceImpl implements StudentCourseRatingService {
             StudentCourseRating studentCourseRating = new StudentCourseRating();
             Student student = new Student();
             Course course = new Course();
-            studentCourseRating.getCourse().setCourseName(studentInfo[0]);
-            studentCourseRating.getStudent().setStudentName(studentInfo[1]);
+            studentCourseRating.setCourse(course);
+            studentCourseRating.setStudent(student);
+            course.setCourseName(studentInfo[0]);
+            student.setStudentName(studentInfo[1]);
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date date = formatter.parse(studentInfo[2]);
             studentCourseRating.setTimeStamp(date);

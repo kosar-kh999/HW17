@@ -19,6 +19,6 @@ public class Student implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String studentName;
-    @OneToMany
-    List<StudentCourseRating> studentCourseRatings = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<StudentCourseRating> studentCourseRatings = new ArrayList<>();
 }
