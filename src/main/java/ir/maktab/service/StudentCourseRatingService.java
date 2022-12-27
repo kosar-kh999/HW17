@@ -7,5 +7,4 @@ import ir.maktab.data.StudentCourseRating;
 public interface StudentCourseRatingService {
 
     StudentCourseRating load(int lineNumber);
-    int count();
 }

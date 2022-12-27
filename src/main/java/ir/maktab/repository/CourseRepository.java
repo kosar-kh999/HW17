@@ -9,19 +9,8 @@ public class CourseRepository {
     public void persist(Course course) {
         EntityManager entityManager = EntityManagerFactoryProducer.emf.createEntityManager();
         entityManager.getTransaction().begin();
-        entityManager.merge(course);
+        entityManager.persist(course);
         entityManager.getTransaction().commit();
         entityManager.close();
-    }
-
-    public Course findCourseByName(String courseName) {
-        EntityManager entityManager = EntityManagerFactoryProducer.emf.createEntityManager();
-        entityManager.getTransaction().begin();
-        Query query = entityManager.createQuery("from Course c where c.courseName=:courseName");
-        query.setParameter("courseName", courseName);
-        Course course = (Course) query.getSingleResult();
-        entityManager.getTransaction().commit();
-        entityManager.close();
-        return course;
     }
 }

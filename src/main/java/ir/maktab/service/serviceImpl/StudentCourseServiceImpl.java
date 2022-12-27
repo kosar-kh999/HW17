@@ -59,9 +59,4 @@ public class StudentCourseServiceImpl implements StudentCourseRatingService {
         }
     }
 
-    @Override
-    public int count() {
-        return 0;
-    }
-
 }
